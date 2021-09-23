@@ -6,9 +6,11 @@
   "license": "MIT",
   "scripts": {
     "docs": "ng build --base-href https://alphahydrae.github.io/angular-pdf-experiments/",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "ng": "ng",
     "start": "ng serve --open",
-    "test": "prettier --check ."
+    "test": "npm run format:check"
   },
   "private": true,
   "dependencies": {
