@@ -9,7 +9,7 @@ import * as html2pdf from 'html2pdf.js';
 export class AppComponent {
   title = 'Angular PDF Experiments';
 
-  @ViewChild("main", { static: true })
+  @ViewChild('main', { static: true })
   private readonly mainElement!: ElementRef<HTMLElement>;
 
   async saveAsPdf() {

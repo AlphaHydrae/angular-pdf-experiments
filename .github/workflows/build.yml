@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+
+name: build
+
+on:
+  push:
+    branches:
+      - "**"
+    tags:
+      - "**"
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-20.04
+    name: Build the application
+    steps:
+
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Install asdf
+        uses: asdf-vm/actions/setup@v1
+        with:
+          asdf_branch: v0.8.1
+
+      - name: Install Node.js with asdf
+        run: |
+          asdf plugin add nodejs
+          asdf install nodejs
+
+      - name: Build the application for production
+        run: |
+          npm run docs
+
+  check-format:
+    runs-on: ubuntu-20.04
+    name: Check code formatting
+    steps:
+
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Install asdf
+        uses: asdf-vm/actions/setup@v1
+        with:
+          asdf_branch: v0.8.1
+
+      - name: Install Node.js with asdf
+        run: |
+          asdf plugin add nodejs
+          asdf install nodejs
+
+      - name: Check code formatting with Prettier
+        run: |
+          npm test

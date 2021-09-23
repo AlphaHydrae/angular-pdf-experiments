@@ -5,9 +5,10 @@
   "author": "Simon Oulevay <npm@alphahydrae.com>",
   "license": "MIT",
   "scripts": {
-    "docs": "ng build",
+    "docs": "ng build --base-href https://alphahydrae.github.io/angular-pdf-experiments/",
     "ng": "ng",
-    "start": "ng serve --open"
+    "start": "ng serve --open",
+    "test": "prettier --check ."
   },
   "private": true,
   "dependencies": {
@@ -29,6 +30,7 @@
     "@angular/cli": "^12.2.7",
     "@angular/compiler-cli": "^12.2.0",
     "@types/node": "^16.9.6",
+    "prettier": "^2.4.1",
     "typescript": "^4.3.5"
   },
   "engines": {
