@@ -1,0 +1,6 @@
+source $HOME/.screenrc
+
+screen -t start 0
+stuff "npm start\012"
+
+screen -t shell 1

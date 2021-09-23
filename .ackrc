@@ -1,0 +1,4 @@
+# https://beyondgrep.com
+--ignore-dir=docs
+--ignore-dir=node_modules
+--ignore-file=is:package-lock.json
